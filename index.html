@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A sign up form with custom validations</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="wrapper">
+      <h2>Sign Up</h2>
+
+      <form novalidate>
+        <div class="input-group">
+          <div class="input-wrapper">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" />
+            <p id="first-name-error" class="error">something went wrong</p>
+          </div>
+
+          <div class="input-wrapper">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" />
+            <p id="last-name-error" class="error"></p>
+          </div>
+        </div>
+
+        <div class="input-wrapper">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" />
+          <p id="email-error" class="error"></p>
+        </div>
+
+        <div class="input-group">
+          <div class="input-wrapper">
+            <label for="country">Country</label>
+            <select type="select" id="country" name="country">
+              <option value="">Select a Country</option>
+              <option value="bn">France</option>
+              <option value="bn">Germany</option>
+              <option value="bn">Switzerland</option>
+              <option value="bn">The Netherlands</option>
+            </select>
+            <p id="country-error" class="error"></p>
+          </div>
+
+          <div class="input-wrapper">
+            <label for="postal-code">Postal Code</label>
+            <input type="text" id="postal-code" name="postal-code" />
+            <p id="postal-code-error" class="error"></p>
+          </div>
+        </div>
+
+        <div class="input-wrapper">
+          <label for="password">Password</label>
+          <input type="text" id="password" name="password" />
+          <p id="password-error" class="error"></p>
+        </div>
+
+        <div class="input-wrapper">
+          <label for="password-confirmation">Confirm Password</label>
+          <input
+            type="text"
+            id="password-confirmation"
+            name="password-confirmation"
+          />
+          <p id="password-confirmation-error" class="error"></p>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>
