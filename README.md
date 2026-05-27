@@ -24,7 +24,7 @@ These instructions will help you run the project locally.
 
 ## Contributing
 
-Contributions are welcome. Open issues or submit pull requests to improve the template.
+Contributions are welcome. Open issues or submit pull requests to improve the project.
 
 ## 📄 Author
 
