@@ -44,7 +44,7 @@ const lastNameInput = document.getElementById("last-name");
 const lastNameError = document.getElementById("last-name-error");
 const emailInput = document.getElementById("email");
 const emailError = document.getElementById("email-error");
-const contrySelect = document.getElementById("country");
+const countrySelect = document.getElementById("country");
 const countryError = document.getElementById("country-error");
 const postalCodeInput = document.getElementById("postal-code");
 const postalCodeError = document.getElementById("postal-code-error");
@@ -67,9 +67,28 @@ function validateInput(e, constraint) {
   }
 }
 
+function validateSelect() {
+  const hint = "You need to select a country first";
+
+  if (countrySelect.value === "") {
+    countrySelect.setCustomValidity(hint);
+    countrySelect.nextElementSibling.textContent = hint;
+  } else {
+    countrySelect.setCustomValidity("");
+    countrySelect.nextElementSibling.textContent = "";
+  }
+
+  // re-validate postal code field, if it's not empty
+  if (postalCodeInput.value !== "") {
+    validateInput(
+      { target: postalCodeInput },
+      constraints.postalCodes[countrySelect.value],
+    );
+  }
+}
+
 function validatePasswordConfirmation(e) {
   const hint = "Passwords do not match";
-  console.log(e.target.value, passwordInput.value);
 
   if (e.target.value === passwordInput.value) {
     e.target.setCustomValidity("");
@@ -91,6 +110,16 @@ lastNameInput.addEventListener("input", (e) => {
 
 emailInput.addEventListener("input", (e) => {
   validateInput(e, constraints.email);
+});
+
+countrySelect.addEventListener("change", validateSelect);
+
+postalCodeInput.addEventListener("input", (e) => {
+  if (countrySelect.value === "") {
+    validateSelect();
+  } else {
+    validateInput(e, constraints.postalCodes[countrySelect.value]);
+  }
 });
 
 passwordInput.addEventListener("input", (e) => {
