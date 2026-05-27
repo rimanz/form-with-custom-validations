@@ -80,6 +80,29 @@ select {
   border: 1px solid black;
   border-radius: 3px;
   padding: 0.5rem 0.5rem;
+
+  &:user-valid {
+    border: 2px green solid;
+  }
+
+  &:user-invalid {
+    border: 2px solid red;
+  }
+
+  &:focus {
+    border-color: transparent;
+    outline: 2px solid;
+  }
+
+  &:focus:user-valid {
+    border-color: transparent;
+    outline: 2px solid green;
+  }
+
+  &:focus:user-invalid {
+    border-color: transparent;
+    outline: 2px solid red;
+  }
 }
 
 select {
