@@ -35,14 +35,25 @@ body {
 h2 {
   font-size: 1.75rem;
   text-align: center;
-  padding-bottom: 1.5rem;
+}
+
+.notice {
+  font-weight: 500;
+  line-height: 1.5;
+  color: #464646;
+  padding: var(--pad-x);
+
+  &::first-line {
+    font-weight: bold;
+    color: #ed5353;
+  }
 }
 
 form {
   display: flex;
   flex-wrap: wrap;
   gap: var(--pad-y);
-  padding: 0.5rem;
+  padding: var(--pad-y) var(--pad-x);
 }
 
 .input-group {
