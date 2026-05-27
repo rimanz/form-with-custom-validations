@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A sign up form with custom validations</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
   </head>
   <body>
     <main class="wrapper">
@@ -15,7 +16,7 @@
           <div class="input-wrapper">
             <label for="first-name">First Name</label>
             <input type="text" id="first-name" name="first-name" />
-            <p id="first-name-error" class="error">something went wrong</p>
+            <p id="first-name-error" class="error"></p>
           </div>
 
           <div class="input-wrapper">
@@ -36,10 +37,10 @@
             <label for="country">Country</label>
             <select type="select" id="country" name="country">
               <option value="">Select a Country</option>
-              <option value="bn">France</option>
-              <option value="bn">Germany</option>
-              <option value="bn">Switzerland</option>
-              <option value="bn">The Netherlands</option>
+              <option value="fr">France</option>
+              <option value="de">Germany</option>
+              <option value="ch">Switzerland</option>
+              <option value="nl">The Netherlands</option>
             </select>
             <p id="country-error" class="error"></p>
           </div>
@@ -53,18 +54,14 @@
 
         <div class="input-wrapper">
           <label for="password">Password</label>
-          <input type="text" id="password" name="password" />
+          <input type="password" id="password" name="password" />
           <p id="password-error" class="error"></p>
         </div>
 
         <div class="input-wrapper">
-          <label for="password-confirmation">Confirm Password</label>
-          <input
-            type="text"
-            id="password-confirmation"
-            name="password-confirmation"
-          />
-          <p id="password-confirmation-error" class="error"></p>
+          <label for="confirmation">Confirm Password</label>
+          <input type="password" id="confirmation" name="confirmation" />
+          <p id="confirmation-error" class="error"></p>
         </div>
 
         <button type="submit">Submit</button>
