@@ -93,11 +93,13 @@ select {
   padding: 0.5rem 0.5rem;
 
   &:user-valid {
-    border: 2px green solid;
+    background-color: rgb(196, 241, 196);
+    border: 2px #008000 solid;
   }
 
   &:user-invalid {
-    border: 2px solid red;
+    background-color: #ffcccc;
+    border: 2px solid #ed5353;
   }
 
   &:focus {
@@ -107,12 +109,12 @@ select {
 
   &:focus:user-valid {
     border-color: transparent;
-    outline: 2px solid green;
+    outline: 2px solid #008000;
   }
 
   &:focus:user-invalid {
     border-color: transparent;
-    outline: 2px solid red;
+    outline: 2px solid #ed5353;
   }
 }
 
